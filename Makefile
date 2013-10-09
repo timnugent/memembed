@@ -27,7 +27,7 @@ clean:
 	rm bin/memembed src/*.o examples/*EMBED.pdb
 
 test:
-	bin/memembed -t 4-26,46,68 -n out -q 1 -a 2 examples/2x2v.pdb
+	bin/memembed -t 4,26,46,68 -n out -q 1 -a 2 examples/2x2v.pdb
 
 
 	
