@@ -9,15 +9,14 @@ For full details, see http://www.biomedcentral.com/1471-2105/14/276/
 Compiling
 ---------
 
-Requires Boost headers and libraries - specifically boost_thread. On recent Debian/Ubuntu
-distributions, install these packages:
+Tested under Ubuntu 13.04 and CentOS 5.4.
+
+Requires Boost headers and libraries - specifically boost_thread. On recent Debian/Ubuntu distributions, install these packages:
 
 libboost-thread1.49-dev
 libboost-thread1.49.0
 
-Boost version 1.50 seems to require boost_system as well so you may have to modify the 
-Makefile if you're using that version or above. Then to compile, just run make (then make
-test).
+Boost version 1.50 seems to require boost_system as well so you may have to modify the Makefile if you're using that version or above. Then to compile, just run make (then optionally, make test).
 
 Examples
 --------
