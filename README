@@ -1,10 +1,12 @@
 Membrane protein orientation using a knowledge-based statistical potential
 (c) Tim Nugent 2013
 
+
 Paper
 -----
 
 For full details, see http://www.biomedcentral.com/1471-2105/14/276/
+
 
 Compiling
 ---------
@@ -17,6 +19,13 @@ libboost-thread1.49-dev
 libboost-thread1.49.0
 libboost-system1.49-dev
 libboost-system1.49.0
+
+or just install them all:
+
+libboost-all-dev
+
+Then to compile, just run make (then optionally, make test).
+
 
 Examples
 --------
@@ -58,6 +67,7 @@ data for cross-validated potential files):
 
 bin/memembed -m examples/2iahA.pot examples/2iahA.pdb
 
+
 Scripts
 -------
 
@@ -72,6 +82,7 @@ Generate image:
 scripts/pymol_membrane_image.py examples/3o7qA_EMBED.pdb examples/3o7qA_EMBED.png
 
 You can add some Pymol api commands around line 26. Defaults to 2 threads (line 12)
+
 
 Help
 ----
