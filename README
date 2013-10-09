@@ -11,12 +11,12 @@ Compiling
 
 Tested under Ubuntu 13.04 and CentOS 5.4.
 
-Requires Boost headers and libraries - specifically boost_thread. On recent Debian/Ubuntu distributions, install these packages:
+Requires Boost headers and libraries - specifically boost_thread and boost_system. On recent Debian/Ubuntu distributions, install these packages:
 
 libboost-thread1.49-dev
 libboost-thread1.49.0
-
-Boost version 1.50 seems to require boost_system as well so you may have to modify the Makefile if you're using that version or above. Then to compile, just run make (then optionally, make test).
+libboost-system1.49-dev
+libboost-system1.49.0
 
 Examples
 --------
