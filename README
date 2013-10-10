@@ -60,7 +60,7 @@ bin/memembed -t 4-26,46,68 -n out -q 1 examples/2x2v.pdb
 
 Calculate helix tilt angles:
 
-bin/memembed -z -t 4-26,46,68 -n out examples/2x2v_EMBED.pdb
+bin/memembed -z -t 4,26,46,68 -n out examples/2x2v_EMBED.pdb
 
 Orientate target using a specific potential file (see supplementary
 data for cross-validated potential files):
