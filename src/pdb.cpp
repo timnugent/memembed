@@ -645,8 +645,6 @@ void PDB::calc_thickness(double x_rot, double y_rot, double z_trans){
 			}else{
 				energy_e += aa_average_out[p.res_];
 			}
-
-			if(14.5+shift_e > max_zt){energy_e += 10000;}
 		}
 		
 		for(double shift_c = shift_start2; shift_c < shift_stop2; shift_c += shift_increment){
@@ -682,13 +680,18 @@ void PDB::calc_thickness(double x_rot, double y_rot, double z_trans){
 				}else{
 					energy_c += aa_average_out[q.res_];
 				}
-
-				if(-14.5-shift_c < min_zt){energy_e += 10000;}
 			}
 
+			
 			double total = energy_e+energy_c;
-			if(total < lowest_e){	
-
+			
+			if((total < lowest_e)&&(15+best_extra_shift < max_zt && (-15-best_cyto_shift) > min_zt)){
+				/*	
+				cout << "thickness = " << (30.0+best_extra_shift+best_cyto_shift) << " - cyto: " << best_cyto_shift << " extra: " << best_extra_shift;
+				cout << endl << 15+best_extra_shift << " 0===== =====0 " << -15-best_cyto_shift << endl;				
+				cout << max_zt << " <========> " << min_zt << endl;
+				cout << "Energy: " << total << endl << endl;
+				*/
 				lowest_e = total;
 				best_extra_shift = shift_e;
 				best_cyto_shift = shift_c;
@@ -697,6 +700,7 @@ void PDB::calc_thickness(double x_rot, double y_rot, double z_trans){
 		}
 	}
 	printf("Hydrophobic thickness:\t%f\n\n",30.0+best_extra_shift+best_cyto_shift);
+
 
 }
 
