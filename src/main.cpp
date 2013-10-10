@@ -21,7 +21,7 @@ using namespace std;
 using namespace boost;
 using namespace boost::accumulators;
 
-#define VERSION 1.13
+#define VERSION 1.14
 #define _USE_MATH_DEFINES
 
 void usage(const char* progname){
