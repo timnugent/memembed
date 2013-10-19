@@ -15,10 +15,10 @@ GA::GA(vector<double>& minp, vector<double>& maxp){
 	mutrate = 0.1;
 	crosrate = 0.9;
 	mutscfac = 1;
-    	prevbest = 100000;
-    	vbest = 100000;
-    	totalcalls = 0;
-    	ncalls = 0;
+	prevbest = 100000;
+	vbest = 100000;
+	totalcalls = 0;
+	ncalls = 0;
     	for(int i = 0; i < poolsize; i++){
     		samparr.push_back(0.0);
     	}
