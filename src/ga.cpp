@@ -19,9 +19,9 @@ GA::GA(vector<double>& minp, vector<double>& maxp){
 	vbest = 100000;
 	totalcalls = 0;
 	ncalls = 0;
-    	for(int i = 0; i < poolsize; i++){
-    		samparr.push_back(0.0);
-    	}
+	for(int i = 0; i < poolsize; i++){
+		samparr.push_back(0.0);
+	}
 	randomise();
 	init();
 }
