@@ -164,7 +164,7 @@ int main(int argc, const char* argv[]){
 		double initial_e = protein->orientate(0.0,0.0,0.0);
 		protein->origin_shift();
 		if(protein->get_maxcdist() > maxcc){
-			cout << "Max C-C distance is > " << maxcc << " - aborting" << endl;
+			cout << "Max C-C distance is > " << maxcc << " - aborting." << endl << endl;
 			delete protein;
 			return(1);
 		}
