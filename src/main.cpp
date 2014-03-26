@@ -162,6 +162,11 @@ int main(int argc, const char* argv[]){
 
 		double initial_e = protein->orientate(0.0,0.0,0.0);
 		protein->origin_shift();
+		if(protein->get_maxcdist > 5000){
+			cout << "Max C-C distance is >5000 - aborting" << endl;
+			delete protein;
+			return(1);
+		}
 
 		// Set search parameters
 		vector<double> minparam(3), maxparam(3);
