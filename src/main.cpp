@@ -36,6 +36,7 @@ void usage(const char* progname){
 	cout << "-t <string>\tComma seperated list of helix boundaries used to calculate helix tilt angles." << endl;
 	cout << "-f <string>\tComma seperated list of residues to skip." << endl;
 	cout << "-r <string>\tChain that topology refers to. Default 'A'" << endl;
+	cout << "-v <int>\tMaximum Cb-Cb distance to allow." << endl;		
 	cout << "-a <int>\tThreads to use." << endl;	
 	cout << "-s <int>\tSearch type. 0 = Genetic algorithm, 1 = Grid, 2 = Direct, 3 = GA repeated 5 times. Default 0." << endl;	
 	cout << "-q <int>\tOptimise membrane thickness. 0 = Do not optimise, 1 = After orientation, 2 = Do not orientate. Default 0." << endl;	
@@ -50,8 +51,7 @@ void usage(const char* progname){
 
 int main(int argc, const char* argv[]){
 
-	int threads = 1;
-	int i = 1, e = 0, s = 0, calc_tilt_only = 0, calc_hydro_thickness = 0;
+	int threads = 1, i = 1, e = 0, s = 0, calc_tilt_only = 0, calc_hydro_thickness = 0, maxcc = 5000;
 	string target, mempotfile, chain_string, n_term, topology_string, residue_skip_string;
 	string top_chain = "A";
 	vector<int> topology,skip_residues;
@@ -72,6 +72,7 @@ int main(int argc, const char* argv[]){
 				case 'e' : {e = 1; i--; break;}	
 				case 'n' : {n_term = argv[i];; break;}	   
 				case 'a' : {threads=atoi(argv[i]); break;}
+				case 'v' : {maxcc=atoi(argv[i]); break;}
 				case 's' : {s = atoi(argv[i]); break;}
 				case 'b' : {protein->set_beta(true); i--; break;}
 				case 't' : {topology_string=argv[i]; break;}
@@ -162,7 +163,7 @@ int main(int argc, const char* argv[]){
 
 		double initial_e = protein->orientate(0.0,0.0,0.0);
 		protein->origin_shift();
-		if(protein->get_maxcdist() > 5000){
+		if(protein->get_maxcdist() > maxcc){
 			cout << "Max C-C distance is >5000 - aborting" << endl;
 			delete protein;
 			return(1);
