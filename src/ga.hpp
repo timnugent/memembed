@@ -42,7 +42,7 @@ private:
 	std::vector<int> samparr;
 	std::vector<double> minparam, maxparam, results;
 	int	ncalls, threads, genlen, poolsize, prevbest, vbest, max_ga_calls, besti, totalcalls;
-	unsigned int w, x, y, z, c;
+	unsigned int x, y, z, c;
 	double mutrate, crosrate, mutscfac, worst, best, avc_perf;
 	Schema *curpool, *newpool;		
 	boost::mutex result_mutex;
