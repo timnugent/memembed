@@ -24,10 +24,10 @@ memembed: src/pdb.o src/ga.o src/grid.o src/direct.o src/main.o
 	$(CPP) $(CFLAGS) $(INC) src/main.o src/pdb.o src/ga.o src/grid.o src/direct.o ${LIBS} -o bin/memembed
 
 mempot: src/mempot.cpp
-	$(CXX) $(CFLAGS) src/mempot.cpp -o bin/mempot
+	$(CXX) $(CFLAGS) $(INC) src/mempot.cpp -o bin/mempot
 
 clean:
-	rm bin/memembed bin/mempot src/*.o examples/*EMBED.pdb
+	rm -f bin/memembed bin/mempot src/*.o examples/*EMBED.pdb
 
 test:
 	bin/memembed -t 4,26,46,68 -n out -q 1 -a 2 examples/2x2v.pdb
