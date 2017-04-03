@@ -64,6 +64,18 @@ data for cross-validated potential files):
 
 bin/memembed -m examples/2iahA.pot examples/2iahA.pdb
 
+Mempot
+------
+
+To generate potential files to use with the -m flag, use bin/mempot.
+
+Edit the TARGETS file to indicate which chain from each PDB file should be parsed
+from a directory of pre-positioned PDB files, e.g. pdbs/ 
+
+bin/mempot -l TARGETS -p pdbs/ > alpha.pot'
+
+Use the file alpha.pot with memembed
+
 Scripts
 -------
 
