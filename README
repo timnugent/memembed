@@ -72,7 +72,7 @@ To generate potential files to use with the -m flag, use bin/mempot.
 Edit the TARGETS file to indicate which chain from each PDB file should be parsed
 from a directory of pre-positioned PDB files, e.g. pdbs/ 
 
-bin/mempot -l TARGETS -p pdbs/ > alpha.pot'
+bin/mempot -l TARGETS -p pdbs/ > alpha.pot
 
 Use the file alpha.pot with memembed
 
