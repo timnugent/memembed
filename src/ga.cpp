@@ -1,6 +1,7 @@
 #include <pdb.hpp>	
 #include <ga.hpp>	
 #include <random>
+#include <iostream>
 
 using namespace std;
 
