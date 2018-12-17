@@ -1,5 +1,5 @@
 CPP = g++
-CFLAGS = -Wall -Wextra -Werror -O3 -fPIC -std=c++11
+CFLAGS = -Wall -Wextra -Werror -O3 -fPIC -std=c++11 -pthread
 INC = -Isrc
 LIBS = -lboost_thread -lboost_system
 
